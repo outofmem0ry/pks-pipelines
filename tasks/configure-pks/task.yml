@@ -1,0 +1,31 @@
+---
+
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: czero/rootfs
+
+inputs:
+  - name: pks-pipeline
+
+run:
+  path: pks-pipelines/tasks/config-pks/task.sh
+
+params:
+   infra_network_name
+   services_network_name
+   az_1_name
+   vcenter_host
+   vcenter_usr
+   vcenter_pwd
+   vcenter_data_center
+   om_data_store
+   bosh_vm_folder
+   uaa_url
+   OPS_MGR_USR
+   OPS_MGR_PWD
+   OPSMAN_DOMAIN_OR_IP_ADDRESS
+   SYSTEM_DOMAIN
+   UAA_DOMAIN
