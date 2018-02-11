@@ -2,10 +2,7 @@
 
 set -eu
 
-domains=(
-    "*.${SYSTEM_DOMAIN}"
-    "*.${UAA_DOMAIN}"
-  )
+domains="*.${SYSTEM_DOMAIN} *.${UAA_DOMAIN}"
 data=$(echo $domains | jq --raw-input -c '{"domains": (. | split(" "))}')
 certificates=$(om-linux \
      --target "https://${OPSMAN_DOMAIN_OR_IP_ADDRESS}" \
